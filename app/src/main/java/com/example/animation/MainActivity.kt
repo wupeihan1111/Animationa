@@ -51,6 +51,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AnimationTheme {
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     /*
                     Greeting(
@@ -64,12 +65,15 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
 }
 
 @Composable
 fun Animation(m:Modifier){
     var appear by remember { mutableStateOf(true) }  //背景出現
+
     var expanded by remember { mutableStateOf(true) }  //背景延展
+
     var fly by remember { mutableStateOf(false) }  //火箭升空
     //大小動畫
     val rocketSize by animateDpAsState(
